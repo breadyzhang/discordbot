@@ -5,7 +5,15 @@
   "main": "main.js",
   "author": "Freddy Zhang",
   "dependencies": {
+    "@discordjs/opus": "^0.3.3",
     "discord.io": "^2.5.3",
-    "winston": "^3.3.3"
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-static": "^4.2.7",
+    "fluent-ffmpeg": "^2.1.2",
+    "sodium": "^3.0.2",
+    "winston": "^3.3.3",
+    "ytdl-core": "^4.2.1"
   }
 }

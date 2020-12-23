@@ -1,35 +1,27 @@
-var Discord = require('discord.io');
-var logger = require('winston');
-var auth = require('./auth.json');
-// Configure logger settings
-logger.remove(logger.transports.Console);
-logger.add(new logger.transports.Console, {
-  colorize: true
-});
-logger.level = 'debug';
-// Init Bot
-var bot = new Discord.Client({
-  token: auth.token,
-  autorun: true
-});
-bot.on('ready', function(evt){
-  logger.info('Connected');
-  logger.info('Logged in as: ');
-  logger.info(bot.username + ' - (' + bot.id + ')');
-});
-bot.on('message', function (user, userID, channelID, message, evt) {
-  if(message.substring(0,1) == '!') {
-    var args = message.substring(1).split(' ');
-    var cmd = args[0];
+const Discord = require('discord.js');
+const auth = require("./auth.json");
+const ytdl = require('ytdl-core');
+const welcome = require('./welcome');
+const message = require('./message');
 
-    args = args.splice(1);
-    switch(cmd) {
-      case 'ping':
-        bot.sendMessage({
-          to:channelID,
-          message: 'Pong!'
-        });
-        break;
-    }
-  }
+const client = new Discord.Client();
+
+const botID = '755175219093569617';
+var channelID = '';
+
+client.login(auth.token);
+
+client.on('ready', () => {
+  console.log('Logged in as ' + client.user.tag);
 });
+
+welcome(client);
+message(client);
+
+async function execute(message){
+  const voiceChannel = message.member.voice.channel;
+  if(!voiceChannel) return message.channel.send("you're not in a voice channel bih");
+  else {
+    const channel = message.member.voice.channel.join();
+  }
+}
