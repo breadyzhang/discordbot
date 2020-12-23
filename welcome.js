@@ -1,6 +1,10 @@
 module.exports = (client, channelID) => {
   client.on('guildMemberAdd', (member) => {
-      console.log("joined");
-      console.log(channelID);
-    })
+      const channel = member.guild.channels.cache.find(channel => channel.name === 'welcome');
+      if(channel)
+        channel.send("welcome to the cringe hole");
+      else {
+        console.log("cannot find channel name");
+      }
+  });
 }
