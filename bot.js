@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 const auth = require("./auth.json");
-const ytdl = require('ytdl-core');
 const welcome = require('./welcome');
 const message = require('./message');
 
@@ -16,12 +15,4 @@ client.on('ready', () => {
 });
 
 welcome(client);
-message(client);
-
-async function execute(message){
-  const voiceChannel = message.member.voice.channel;
-  if(!voiceChannel) return message.channel.send("you're not in a voice channel bih");
-  else {
-    const channel = message.member.voice.channel.join();
-  }
-}
+message(client, botID);

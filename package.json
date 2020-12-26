@@ -1,9 +1,9 @@
 {
-  "name": "HelloBot",
+  "name": "BoatyBot",
   "version": "1.0.0",
   "description": "My First Discord Bot",
   "main": "main.js",
-  "author": "Freddy Zhang",
+  "author": "Freddlin",
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
     "discord.io": "^2.5.3",
@@ -12,7 +12,9 @@
     "ffmpeg": "0.0.4",
     "ffmpeg-static": "^4.2.7",
     "fluent-ffmpeg": "^2.1.2",
+    "node-fetch": "^2.6.1",
     "sodium": "^3.0.2",
+    "tenorjs": "^1.0.7",
     "winston": "^3.3.3",
     "ytdl-core": "^4.2.1"
   }
